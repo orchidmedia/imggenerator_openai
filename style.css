@@ -93,16 +93,6 @@ input {
     box-sizing: border-box;
 }
 
-#submit-icon {
-    position: absolute;
-    top: 10px;
-    right: 30px;
-    cursor: pointer; 
-    font-size: 30px;
-    margin-top: -9px;
-    margin-right: -20px;
-}
-
 .images-section {
     width: 100%;
     max-width: 600px;
