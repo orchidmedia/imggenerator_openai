@@ -149,6 +149,29 @@ input {
     font-family: sans-serif;
 }
 
+.api-key-actions {
+    display: flex;
+    gap: 10px; 
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.api-key-actions button {
+    border: none;
+    background-color: #007293;
+    color: #ffffff;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: rgb(38, 57, 77) 0 20px 30px -10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.api-key-actions button:hover {
+    background-color: #005c6e;
+}
+
 .logout-section {
     width: 100%;
     display: flex;

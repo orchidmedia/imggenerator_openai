@@ -44,8 +44,41 @@ const apiKeyInput = document.querySelector("#api-key-input");
 const imageSection = document.querySelector(".images-section");
 const loader = document.querySelector(".loader");
 const logoutButton = document.querySelector("#logout-btn");
+const saveBtn = document.querySelector("#save-btn");
+const editBtn = document.querySelector("#edit-btn");
+const deleteBtn = document.querySelector("#delete-btn");
 
+saveBtn.addEventListener("click", () => {
+    const apiKey = apiKeyInput.value;
+    if(apiKey) {
+        localStorage.setItem("OpenAI_API_Key", apiKey);
+        alert("API Key saved successfully.");
+        apiKeyInput.setAttribute('disabled', true); // Disable input after saving
+    } else {
+        alert("Please enter a valid API Key.");
+    }
+});
 
+editBtn.addEventListener("click", () => {
+    apiKeyInput.removeAttribute('disabled');
+    apiKeyInput.focus();
+});
+
+deleteBtn.addEventListener("click", () => {
+    localStorage.removeItem("OpenAI_API_Key");
+    apiKeyInput.value = "";
+    apiKeyInput.removeAttribute('disabled');
+    alert("API Key deleted successfully.");
+});
+
+// When the page loads
+document.addEventListener("DOMContentLoaded", () => {
+    const storedAPIKey = localStorage.getItem("OpenAI_API_Key");
+    if(storedAPIKey) {
+        apiKeyInput.value = storedAPIKey;
+        apiKeyInput.setAttribute('disabled', true);
+    }
+});
 
 const getImages = async () => {
     const apiKey = apiKeyInput.value;
