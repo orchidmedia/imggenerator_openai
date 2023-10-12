@@ -1,0 +1,251 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    background-color: #061a4e;
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    justify-content: space-between;
+    align-items: center;
+    font-family: sans-serif;
+    position: relative;
+}
+
+#animated-bg {
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    height: 100%; 
+    width: 100%; 
+    z-index: -1; 
+    background: linear-gradient(45deg, #061a4e, #7bc9b6);
+    background-size: 200% 200%;
+    animation: gradientShift 10s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 100% 0%;
+    }
+    50% {
+        background-position: 0% 100%;
+    }
+    100% {
+        background-position: 100% 0%;
+    }
+}
+
+svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -10;
+}
+
+header {
+    color: #fff;
+    height: 150px;
+    width: 100%;
+    margin: 0 20px;
+    margin-top:20vh;
+    margin-bottom: 2.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+}
+
+.title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* this centers it horizontally too */
+}
+
+.bottom-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+.input-container {
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+}
+
+input {
+    width: 100%;
+    border: none;
+    font-size: 22px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: rgb(38, 57, 77) 0 20px 30px -10px;
+    box-sizing: border-box;
+}
+
+#submit-icon {
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    cursor: pointer; 
+    font-size: 30px;
+    margin-top: -9px;
+    margin-right: -20px;
+}
+
+.images-section {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.image-container {
+    width: 40%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: rgb(38, 57, 77) 0 20px 30px -10px;
+    margin-bottom: 10px; /* Provide spacing between the images */
+}
+
+.image-container img {
+    width: 100%;
+}
+
+.styled-input {
+    border: none;
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: rgb(38, 57, 77) 0 20px 30px -10px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    
+}
+
+.api-key-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+.api-key-section {
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+}
+
+.api-key-section label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: white;
+    margin-right: 10px;
+    margin-bottom: 15px;
+    font-family: sans-serif;
+}
+
+.logout-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#logout-btn {
+    border: none;
+    background-color: #007293; /* You can adjust this color as needed */
+    color: #ffffff;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: rgb(38, 57, 77) 0 20px 30px -10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#logout-btn:hover {
+    background-color: #005c6e; /* Adjust this color for hover state if needed */
+}
+
+.loader {
+    display: none;
+    width: 50px;
+    height: 50px;
+    box-sizing: border-box; /* ensures the border is included in the dimensions */
+    border: 8px solid rgba(255, 255, 255, 0.3); /* Light color */
+    border-radius: 50%;  
+    border-top: 8px solid #007293; /* Darker color */
+    margin: 2em auto;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Tablet Styles */
+@media screen and (max-width: 768px) {
+    .image-container {
+        width: 45%; 
+    }
+    header h1 {
+        margin-left: 30px;  
+        margin-right: 30px; 
+        justify-content: center;
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 480px) {
+    .image-container {
+        width: 100%; /* On mobile, images take the full width */
+        margin: 15px 10px;
+    }
+    
+    header {
+        width: 100%;
+        margin-top: 5vh;
+    }
+    
+    header h1 {
+        text-align: center;
+    }
+
+    #submit-icon {
+        right: 10px; /* Move the submit icon a bit closer to the edge on mobile */
+        font-size: 30px;  /* Increase this to make the icon bigger */
+        margin-top: -9px;
+        margin-right: 0px;
+    }
+
+    input {
+        font-size: 18px; /* Reduce font size a bit for better fit */
+    }
+    
+    .input-container {
+        margin: 0 30px;
+    }
+    
+    .api-key-container {
+        width: 85%;
+
+    }
+
+    
+    
+}

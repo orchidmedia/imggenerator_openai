@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orchid Media AI Image Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Add the Auth0 SDK here -->
+    <script src="https://cdn.auth0.com/js/auth0-spa-js/1.13/auth0-spa-js.production.js"></script>
+    <link rel="icon" href="/Favicon.png" type="image/x-icon">
+
+</head>
+<body>
+    <div id="animated-bg"></div>
+    <svg xmlns="http://www.w3.org/2000/svg" width="100vw" height="100vh"><path fill="#061a4e" d="m0 400 233-50 232 17 233-66 233 33 233-50 232-17 233 100 233-183 233 17 232-17 233 216V0H0Z"/><path fill="#004675" d="m0 999 233-183 232 17 233 116 233-33 233 83 232-133 233 17 233-166 233 133 232-167 233 67V398l-233-216-232 17-233-17-233 183-233-100-232 17-233 50-233-33-233 66-232-17L0 398Z"/><path fill="#007293" d="M0 1199h233l232-100 233 100 233 33h233l232 50h233l233-116 233 183 232-67 233 34V748l-233-67-232 167-233-133-233 166-233-17-232 133-233-83-233 33-233-116-232-17L0 997Z"/><path fill="#399ea8" d="m0 1399 233 83 232-83 233 83 233 83 233-66 232-67 233-50 233 67 233 16 232-33 233 50v-168l-233-34-232 67-233-183-233 116h-233l-232-50H931l-233-33-233-100-232 100H0Z"/><path fill="#7bc9b6" d="M0 1665h2560v-185l-233-50-232 33-233-16-233-67-233 50-232 67-233 66-233-83-233-83-232 83-233-83Z"/></svg>
+    <header>
+        <div class="title-container">
+            <h1>Orchid Media AI image Generator</h1>
+        </div>
+    </header>
+    <div class="loader" hidden></div>
+    <section class="images-section"></section>
+    <section class="bottom-section">
+        <div class="input-container">
+            <input class="styled-input" placeholder="What do you want to create?"/>
+            <div id="submit-icon">➢</div>
+        </div>
+    </section>
+    
+    <div class="api-key-container">
+        <section class="api-key-section">
+            <label for="api-key-input">Enter OpenAI API Key:</label>
+                <input class="styled-input" id="api-key-input" type="text" placeholder="Please add your API Key">
+        </section>
+    </div>
+
+    <section class="logout-section">
+        <button id="logout-btn">Log Out</button>
+    </section>
+    
+    <!-- Link to your JS file -->
+    <script type="module" src="app.js"></script>
+</body>
+</html>
