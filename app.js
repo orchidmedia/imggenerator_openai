@@ -70,7 +70,7 @@ const getImages = async () => {
         })
     };
 
-    loader.style.display = 'block';  // Display the loader before async operation
+    loader.style.display = 'block';  // This displays the loader before async operation
 
     try {
         const response = await fetch("https://api.openai.com/v1/images/generations", options); 
