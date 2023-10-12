@@ -38,7 +38,7 @@ const logout = () => {
 };
 
 //AI image generation code
-const submitIcon = document.querySelector("#submit-icon");
+const submitBtn = document.querySelector("#submit-btn");
 const inputElement = document.querySelector("input");
 const apiKeyInput = document.querySelector("#api-key-input"); 
 const imageSection = document.querySelector(".images-section");
@@ -93,5 +93,5 @@ const getImages = async () => {
     }
 }
 
-submitIcon.addEventListener("click", getImages);
+submitBtn.addEventListener("click", getImages);
 logoutButton.addEventListener("click", logout);
